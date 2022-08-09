@@ -7,14 +7,13 @@ import './api/server'
 
 import store from "./store"
 
-
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
-
-console.log('State after dispatch: ', store.getState())
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
